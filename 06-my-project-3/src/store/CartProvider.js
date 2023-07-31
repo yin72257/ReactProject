@@ -2,6 +2,8 @@ import CartContext from "./cart-context";
 import { useReducer } from "react";
 
 //useReducer for a complex state of the cart. Dispatch function uses action.type to determine course of action. cartReducer is the Reducer and defaultCart is the default state
+//This component, CartProvider, wraps the context provider of CartContext around its children. So this can replace any CartContext used in the code
+//Having the reducer here means the value prop of CartContext.provider is managed by a reducer state at the top level. 
 
 const defaultCart = { items: [], totalAmount: 0 };
 const cartReducer = (state, action) => {
